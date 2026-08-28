@@ -12,7 +12,7 @@ export const Route = createFileRoute("/pricing")({
       {
         name: "description",
         content:
-          "Free plan: unlimited ad-supported invoices. Pro plan: Excel downloads and an ad-free workspace, paid with PayPal.",
+          "Free plan: unlimited ad-supported invoices. Pro plan: Excel downloads and an ad-free workspace, one-time $4.99 payment with PayPal.",
       },
       { property: "og:title", content: "JumpInvoice Pricing" },
       {
@@ -73,7 +73,7 @@ function Pricing() {
               </span>
             </div>
             <p className="mt-1 text-3xl font-bold">
-              $9 <span className="text-base font-normal text-muted-foreground">one-time</span>
+              $4.99 <span className="text-base font-normal text-muted-foreground">one-time</span>
             </p>
             <ul className="mt-5 space-y-2 text-sm">
               <Item yes>Everything in Free</Item>

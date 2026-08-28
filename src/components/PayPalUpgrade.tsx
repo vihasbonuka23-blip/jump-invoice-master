@@ -23,7 +23,7 @@ function loadSdk(): Promise<void> {
   }
   return new Promise((res, rej) => {
     const s = document.createElement("script");
-    s.src = `https://www.paypal.com/sdk/js?client-id=${PAYPAL_SANDBOX_CLIENT_ID}&currency=USD&intent=capture`;
+    s.src = `https://www.paypal.com/sdk/js?client-id=${PAYPAL_CLIENT_ID}&currency=USD&intent=capture`;
     s.dataset["paypalSdk"] = "true";
     s.onload = () => res();
     s.onerror = () => rej(new Error("sdk"));
@@ -49,7 +49,7 @@ export function PayPalUpgrade({ onSuccess }: { onSuccess?: () => void }) {
                 intent: "CAPTURE",
                 purchase_units: [
                   {
-                    description: "JumpInvoice Pro (sandbox)",
+                    description: "JumpInvoice Pro",
                     amount: { currency_code: "USD", value: PRO_PRICE },
                   },
                 ],
@@ -79,18 +79,18 @@ export function PayPalUpgrade({ onSuccess }: { onSuccess?: () => void }) {
     <div className="space-y-3">
       <div ref={ref} />
       {status === "loading" && (
-        <p className="text-sm text-muted-foreground">Loading PayPal sandbox checkout…</p>
+        <p className="text-sm text-muted-foreground">Loading PayPal checkout…</p>
       )}
       {status === "error" && (
         <p className="text-sm text-destructive">
-          PayPal sandbox could not load. Check your connection and try again.
+          PayPal could not load. Check your connection and try again.
         </p>
       )}
       {status === "done" && (
         <p className="text-sm font-medium text-primary">Pro unlocked — ads are off.</p>
       )}
       <p className="text-xs text-muted-foreground">
-        Sandbox mode: no real money moves. Use a PayPal sandbox buyer account to test.
+        Secure one-time payment of ${PRO_PRICE} USD via PayPal.
       </p>
     </div>
   );
