@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { setPro } from "@/lib/invoice";
 
-const PAYPAL_SANDBOX_CLIENT_ID = "test"; // PayPal sandbox test client id
-const PRO_PRICE = "9.00";
+// Live PayPal client id (publishable — safe in frontend code)
+const PAYPAL_CLIENT_ID =
+  "ATXQu_jW6bgtzGCWk1AIluVm_0w6ExOQwOZSLp83QQhohWurPC55-qY6YeuoQ3oui6p93QMhvUGYoya5";
+const PRO_PRICE = "4.99";
 
 declare global {
   interface Window {
