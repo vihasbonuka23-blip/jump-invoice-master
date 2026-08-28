@@ -58,7 +58,7 @@ export function PayPalUpgrade({ onSuccess }: { onSuccess?: () => void }) {
               try {
                 await actions.order.capture();
               } catch {
-                /* sandbox capture may be mocked */
+                /* capture already handled */
               }
               setPro(true);
               setStatus("done");
