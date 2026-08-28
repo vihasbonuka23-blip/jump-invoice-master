@@ -90,7 +90,7 @@ export function PayPalUpgrade({ onSuccess }: { onSuccess?: () => void }) {
         <p className="text-sm font-medium text-primary">Pro unlocked — ads are off.</p>
       )}
       <p className="text-xs text-muted-foreground">
-        Secure one-time payment of ${"{"}PRO_PRICE} USD via PayPal.
+        Secure one-time payment of ${PRO_PRICE} USD via PayPal.
       </p>
     </div>
   );
